@@ -39,6 +39,8 @@ Route::delete('/posts/{post}/likes/delete', [\App\Http\Controllers\PostLikeContr
 
 Route::delete('/posts/{post}/delete',[\App\Http\Controllers\PostController::class,'destroy'])->name('post-delete');
 
+Route::get('/profile/{user:username}/posts', [\App\Http\Controllers\UserPostController::class, 'index'])->name('profile');
+
 //Route::get('/clear-cache', function() {
 //    Artisan::call('cache:clear');
 //    return "Cache is cleared";
