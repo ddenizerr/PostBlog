@@ -31,13 +31,13 @@
 
                        <p class="mb-2">{{$post->body}}</p>
 
-
+                       @can('delete',$post) {{-- defines the scope by policy --}}
                            <form action="{{route('post-delete',$post)}}" method="post">
                                @csrf
                                @method('DELETE')
                                <button type="submit" class="text-blue-500"> Delete</button>
                            </form>
-
+                       @endcan
                             <div class="flex items-center">
                                 @if(!$post->likedBy(auth()->user()))
                                    <form action="{{route('posts.likes', $post)}}" method="post" class="mr-1">

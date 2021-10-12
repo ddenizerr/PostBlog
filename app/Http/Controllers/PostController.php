@@ -44,6 +44,7 @@ class PostController extends Controller
 //        }
 
         $this->authorize('delete',$post);//checks if the post can be deleted by the user.
+                                               //throws exception
         $post->delete();
 
         return back();
