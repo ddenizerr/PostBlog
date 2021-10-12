@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body-image{
+    background-image: url("/app/img/postbox.jpg");
+}
